@@ -1,0 +1,150 @@
+/* Overlay */
+.photo-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+/* MAIN CONTAINER (Default: Desktop Layout = Row) */
+.photo-view-container {
+  background: #1f1f1f;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;      /* Desktop default */
+  width: 90%;
+  max-width: 1100px;
+  height: 80%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Close Button */
+.photo-view-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Left Image Panel */
+.photo-view-left {
+  flex: 2;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-view-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Right Comment Panel */
+.photo-view-right {
+  flex: 1;
+  background: #242424;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Comments Box (Scrollable) */
+.comments-box {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+
+/* Comment Container */
+.comment-item {
+  background: #2c2f33;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: background 0.2s ease-in-out;
+}
+
+.comment-item:hover {
+  background: #3a3d42;
+}
+
+/* Avatar */
+.comment-avatar {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border: 2px solid #ffffff20;
+}
+
+/* Text Section */
+.comment-text {
+  max-width: 230px;
+}
+
+.comment-user {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.comment-message {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  word-break: break-word;
+}
+
+/* Delete Button */
+.delete-comment-btn {
+  background: transparent;
+  border: none;
+  color: #ff7373;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.delete-comment-btn:hover {
+  color: #ff3b3b;
+}
+
+
+
+/********** MOBILE RESPONSIVE **********/
+@media (max-width: 768px) {
+  .photo-view-container {
+    flex-direction: column;   /* Stack vertically on phone */
+    height: 95%;              /* more height for mobile */
+  }
+
+  .photo-view-left {
+    flex: unset;
+    height: 55%;              /* top image fills half screen */
+  }
+
+  .photo-view-right {
+    flex: unset;
+    height: 45%;              /* comments take below space */
+    padding: 15px;
+  }
+
+  .comments-box {
+    max-height: 200px;        /* avoid oversize */
+  }
+}

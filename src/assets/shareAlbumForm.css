@@ -1,0 +1,71 @@
+/* Modal overlay */
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 2000;
+}
+
+/* Card */
+.share-modal-card {
+  width: 380px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Scrollable Email List Box */
+.email-list-box {
+  max-height: 180px;
+  overflow-y: auto;
+  background: #f8f9fa;      /* light gray background */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Individual email item */
+.email-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes email left + delete button right */
+  background: #2a2a2a;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* Scrollbar styling (optional) */
+.email-list-box::-webkit-scrollbar {
+  width: 8px;
+}
+.email-list-box::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 10px;
+}
+
+.delete-Btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: auto; /* pushes button to the right */
+}
+
+.delete-Btn:hover {
+  background: #e60000;
+}
+
